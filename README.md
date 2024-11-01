@@ -11,7 +11,7 @@ The full version of the paper with an appendix can be found here: [https://arxiv
 - [ae_train_process/](ae_train_process/) - some original and reconstructed images when training the autoencoder （观察自编码器训练过程中的输入输出结果）
 - [ae_weights/](ae_weights/) - the trained autoencoder's weight （存训练的自编码器权重）
 - [ae_weights_/](ae_weights_/) - our pretrained autoencoder's weight （我们已经训练好的自编码器权重）
-- [Dataset/](Dataset/) - the dataset we use for evaluation （我们用来评估的数据集）
+- [Dataset/](Dataset/) - the dataset we use for evaluation （我们用来评估的数据集） [https://pan.quark.cn/s/77dec05e3e1e](https://pan.quark.cn/s/77dec05e3e1e)，提取码：hk5V
 - [test_map/](test_map/) - the detection results on the validation dataset （存数据集的检测结果）
 
 - [ae_trainer.ipynb](ae_trainer.ipynb) - train the autoencoder （训练自编码器）
