@@ -50,6 +50,8 @@ The input image is 416\*416 pixels. When we set box_num=32, the image will be di
 
 此处设置了 box_num=32，即将输入的 416×416 图像分为 32×32 个小块，每块大小为 13×13。相应的也可以在下面设置需要载入的预训练权重。
 
+---
+
 ```
 mask1 = ((loss>0.2).float().unsqueeze(1).unsqueeze(2).unsqueeze(3).expand((self.box_num*self.box_num, 3, self.box_length, self.box_length)))
 delta = torch.abs(output-img)
