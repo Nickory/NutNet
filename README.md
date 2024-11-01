@@ -13,6 +13,7 @@ The full version of the paper with an appendix can be found here: [https://arxiv
 - [ae_weights_/](ae_weights_/) - our pretrained autoencoder's weight （我们已经训练好的自编码器权重）
 - [Dataset/](Dataset/) - the dataset we use for evaluation （我们用来评估的数据集） [https://pan.quark.cn/s/77dec05e3e1e](https://pan.quark.cn/s/77dec05e3e1e)，提取码：hk5V
 - [test_map/](test_map/) - the detection results on the validation dataset （存数据集的检测结果）
+- [defense_baseline/](defense_baseline/) - baseline defense, LocalGradientSmooth, ObjectSeeker, SegementAndComplete （对比的baseline工作，已封装完）
 
 - [ae_trainer.ipynb](ae_trainer.ipynb) - train the autoencoder （训练自编码器）
 - [test_map_defense.ipynb](test_map_defense.ipynb) - evaluate the AP (average precision) of the detection model with defense （测试有防御状态下的目标检测平均精度）
