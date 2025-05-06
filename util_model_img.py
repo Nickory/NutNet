@@ -13,6 +13,53 @@ import pickle as pkl
 ##                       模型输入输出处理的一些函数                         ##
 ############################################################################
 
+def letterbox_image(img, input_dim):
+    """
+    
+    Description
+    -----------
+    将输入的图像缩放（长宽比不变）并填充到指定大小。
+    
+    Parameters
+    ----------
+    @img : (np.array)
+        the input image with size [h, w, c].
+    @input_dim : (int)
+        the size of model input (416*416 for Yolo3).
+    
+    Returns
+    -------
+    @canvas : (np.array)
+        the image with size [416, 416, c]
+    """
+
+    img_h, img_w = img.shape[0], img.shape[1]
+    h, w = input_dim
+    new_h = int(img_h * min(w / img_w, h / img_h))
+    new_w = int(img_w * min(w / img_w, h / img_h))
+
+    resized_image = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_CUBIC)
+    canvas = np.full((input_dim[1], input_dim[0], 3), 128)
+    canvas[(h - new_h) // 2:(h - new_h) // 2 + new_h, (w - new_w) // 2:(w - new_w) // 2 + new_w, :] = resized_image
+    
+    return canvas
+
+
+
+def load_classes(names_file):
+    """
+    Description
+    -----------
+    输入一个包含了分类名称的文件，输出分类组成的列表
+    
+    """
+    
+    file = open(names_file, 'r')
+    names = file.read().split('\n')[:-1]
+    
+    return names
+
+
 
 def get_ind(prediction, ori_index, conf_thresh=0.5, num_classes=80):
     """
